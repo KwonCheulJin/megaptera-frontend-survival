@@ -2,7 +2,8 @@
 
 ## megatera-frontend-JIN
 
-* [프론트엔드 생존코스 3기](README.md)
+- [프론트엔드 생존코스 3기](README.md)
 
-* [1주차](/learning/week1.md)
-  * [1. Environment](/learning/week1/environment.md)
+- [1주차](/week1/README.md)
+
+  - [1. Environment](/week1/environment.md)
