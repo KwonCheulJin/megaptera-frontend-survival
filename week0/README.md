@@ -9,5 +9,3 @@
 {% content-ref url="git-training.md" %}
 [git-training.md](git-training.md)
 {% endcontent-ref %}
-
-*

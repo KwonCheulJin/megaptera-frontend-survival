@@ -19,5 +19,3 @@
 {% content-ref url="parcel-and-eslint.md" %}
 [parcel-and-eslint.md](parcel-and-eslint.md)
 {% endcontent-ref %}
-
-*

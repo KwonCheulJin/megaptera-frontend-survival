@@ -9,4 +9,3 @@
 {% content-ref url="week1/" %}
 [week1](week1/)
 {% endcontent-ref %}
-
