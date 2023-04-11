@@ -1,4 +1,4 @@
-# 1. WakaTime
+# 1.와카타임 설치
 
 * VS Code에 WakaTime Extension 설치
 ![스크린샷 2023-04-05 08 38 43](https://user-images.githubusercontent.com/76520716/229945785-72adbe1f-75ee-4ad4-a5e9-0f48378d0df1.png)
