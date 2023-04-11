@@ -128,7 +128,9 @@ let assertion:any = "타입 어설션은 '타입을 단언'합니다.";
 let assertion_count:number = (assertion as string).length;
 ```
 
-!!!INFO 두 방법 모두 결과는 동일합니다. 하지만 JSX와 함께 사용하는 경우에는 as 문법만 허용됩니다.
+{% hint style="info" %}
+ 두 방법 모두 결과는 동일합니다. 하지만 JSX와 함께 사용하는 경우에는 as 문법만 허용됩니다.
+{% endhint %}
 
 보통 JSX에서 많이 쓰는 타입 단언에는 div태그에서 이벤트가 발생한 상태에서 해당 div안의 input에서
 값을 가져와야 하는 경우에 타입 단언을 많이 사용했다.
