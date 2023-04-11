@@ -2,5 +2,12 @@
 
 ## 사전과제 진행
 
-- [1.와카타임 설치](waka-time.md)
-- [2.git-training](git-training.md)
+{% content-ref url="waka-time.md" %}
+[waka-time.md](waka-time.md)
+{% endcontent-ref %}
+
+{% content-ref url="git-training.md" %}
+[git-training.md](git-training.md)
+{% endcontent-ref %}
+
+*
