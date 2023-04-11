@@ -209,6 +209,6 @@ printName({ first: "Alice", last: "Alisson" });
 
 ### References
 
-- [typescript](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [typescript 공식문서](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [yamoo9.gitbook.io](https://yamoo9.gitbook.io/typescript/interface)
 - [joshua1988.github.io](https://joshua1988.github.io/ts/guide/type-inference.html)

@@ -41,7 +41,7 @@
   npm init -y
 ```
 
-터미널에서 위의 명령어로 실행하면 기본적으로 아래와 같은 ```package.json``` 이 생성된다.
+터미널에서 위의 명령어로 실행하면 기본적으로 아래와 같은 `package.json` 이 생성된다.
 
 ```json
 {
@@ -58,8 +58,8 @@
 }
 ```
 
-패키지를 게시할 계획이라면 ```name```과 ```version```이 제일 중요한 항목이다.
-그렇지 않다면 ```name```과 ```version```은 선택사항이다.
+패키지를 게시할 계획이라면 `name`과 `version`이 제일 중요한 항목이다.
+그렇지 않다면 `name`과 `version`은 선택사항이다.
 
 기본적인 package.json 설명은 [npm-package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#name)에서 참고하면 된다.
 
@@ -69,7 +69,7 @@
 npm i <설치 할 모듈>
 ```
 
-위와 같이 모듈를 설치하면 ```package.json```에 dependencies 항목이 추가된다.
+위와 같이 모듈를 설치하면 `package.json`에 dependencies 항목이 추가된다.
 
 - dependencies: 프로그램에서 직접적으로 사용하는 모듈
 
