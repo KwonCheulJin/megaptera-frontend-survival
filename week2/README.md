@@ -1,7 +1,5 @@
 # 2주차
 
-## JSX
-
 {% content-ref url="jsx" %}
-[jsx](jsx)
+[jsx](jsx.md)
 {% endcontent-ref %}
