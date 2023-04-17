@@ -1,4 +1,4 @@
-# JSX
+# 1.JSX
 
 `JSX(JavaScript XML)는 Javascript에 XML을 추가한 확장한 문법이다.`
 
@@ -23,10 +23,9 @@ const element = React.createElement(
 
 ```
 
-하지만 `React.createElement`로 작성하였을 때 보다 `JSX`를 사용하는 것이 훨씬 직관적이고 가독성이 좋고
-`JSX`는 하나의 파일에 자바스크립트와 HTML을 동시에 작성하여 편리하다.
+하지만 `React.createElement`로 작성하였을 때 보다 `JSX`를 사용하는 것이 훨씬 직관적이고 가독성이 좋고 `JSX`는 하나의 파일에 자바스크립트와 HTML을 동시에 작성하여 편리하다.
 
-## Syntactic sugart
+## Syntactic sugar
 
 `직관적이지는 않지만 코드의 양을 줄일 수 있는 문법적인 설탕을 의미한다.`
 
@@ -172,8 +171,7 @@ React.createElement('div', { className: 'test' }, 'Hello, World!')
 <div className="test">Hello, World!</div>
 ```
 
-`React.createElement` 함수는 컴포넌트 함수를 첫 번째 인수로 사용할 수도 있다.
-이 경우 함수 이름을 문자열로 전달하거나 ES6의 화살표 함수 구문을 사용하여 직접 함수를 전달할 수 있습니다. 또한 속성 및 자식 요소들은 컴포넌트 함수의 인수로 전달됩니다.
+`React.createElement` 함수는 컴포넌트 함수를 첫 번째 인수로 사용할 수도 있다. 이 경우 함수 이름을 문자열로 전달하거나 ES6의 화살표 함수 구문을 사용하여 직접 함수를 전달할 수 있습니다. 또한 속성 및 자식 요소들은 컴포넌트 함수의 인수로 전달됩니다.
 
 ```javascript
 function MyComponent(props) {
@@ -199,34 +197,27 @@ interface ReactElement<P = any, T extends string | JSXElementConstructor<any> = 
 
 `React Element`의 속성(property)
 
-- type: 요소의 유형, 예를 들어 "div" 또는 사용자 지정 컴포넌트 함수입니다.
-- props: 요소의 속성, 예를 들어 className, style, onClick 등의 속성이 포함됩니다.
-- key: 컴포넌트가 업데이트될 때 React가 요소를 식별하는 데 사용되는 고유한 식별자입니다.
-- ref: React 요소에 대한 참조(reference)를 만드는 데 사용됩니다.
+* type: 요소의 유형, 예를 들어 "div" 또는 사용자 지정 컴포넌트 함수입니다.
+* props: 요소의 속성, 예를 들어 className, style, onClick 등의 속성이 포함됩니다.
+* key: 컴포넌트가 업데이트될 때 React가 요소를 식별하는 데 사용되는 고유한 식별자입니다.
+* ref: React 요소에 대한 참조(reference)를 만드는 데 사용됩니다.
 
-`React`에서 렌더링되는 가장 작은 단위이다.
-`React Element`는 `JavaScript` 객체로, `React` 요소를 나타낸다.
-`React` 요소는 화면에 렌더링되는 요소를 나타내며, 다른 `React` 요소들과 결합하여 `React` 컴포넌트를 만드는 데 사용된다.
+`React`에서 렌더링되는 가장 작은 단위이다. `React Element`는 `JavaScript` 객체로, `React` 요소를 나타낸다. `React` 요소는 화면에 렌더링되는 요소를 나타내며, 다른 `React` 요소들과 결합하여 `React` 컴포넌트를 만드는 데 사용된다.
 
 `React Element`는 불변객체(immutable object)이며, 한 번 생성되면 수정될 수 없습니다. 이러한 불변성은 `React`의 성능을 향상시키는 데 기여합니다. `React`는 변화가 필요한 경우 새로운 `React Element`를 만들고 기존의 `Element`와 새 `Element`를 비교하여 최소한의 변경만 적용하므로 렌더링 성능을 향상시킵니다.
 
 ## React StrictMode
 
-애플리케이션에서 잠재적인 문제를 미리 감지하고 해결할 수 있도록 도와주는 도구
-StrictMode는 개발 모드에서만 동작하며, 브라우저에서는 아무런 영향을 미치지 않는다.
+애플리케이션에서 잠재적인 문제를 미리 감지하고 해결할 수 있도록 도와주는 도구 StrictMode는 개발 모드에서만 동작하며, 브라우저에서는 아무런 영향을 미치지 않는다.
 
 `StrictMode를 통해서 얻을 수 있는 효과`
 
-- `부수효과 검사`: React 컴포넌트에서 부수효과(일반적으로 생명주기 메서드, useEffect 등)를 사용할 때 경고 메시지를 출력하여 잠재적인 문제를 감지할 수 있다.
+* `부수효과 검사`: React 컴포넌트에서 부수효과(일반적으로 생명주기 메서드, useEffect 등)를 사용할 때 경고 메시지를 출력하여 잠재적인 문제를 감지할 수 있다.
+* `레거시 문자열 ref 경고`: 문자열을 사용하여 ref를 생성하면 경고 메시지가 표시됩니다. 문자열 ref는 더 이상 권장되지 않으며, 함수를 사용하여 ref를 생성하는 것이 좋다.
+* `레거시 생명주기 메서드 경고`: 레거시 생명주기 메서드(componentWillMount, componentWillReceiveProps, componentWillUpdate)를 사용하면 경고 메시지가 표시됩니다. 이러한 메서드는 더 이상 권장되지 않으며, 대신에 componentDidMount, componentDidUpdate, getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
+* `안전하지 않은 생명주기 메서드 경고`: 안전하지 않은 생명주기 메서드(UNSAFE\_componentWillMount, UNSAFE\_componentWillReceiveProps, UNSAFE\_componentWillUpdate)를 사용하면 경고 메시지가 표시됩니다. 이러한 메서드는 향후 `React` 업데이트에서 삭제될 예정이며, 대신에 getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
 
-- `레거시 문자열 ref 경고`: 문자열을 사용하여 ref를 생성하면 경고 메시지가 표시됩니다. 문자열 ref는 더 이상 권장되지 않으며, 함수를 사용하여 ref를 생성하는 것이 좋다.
-
-- `레거시 생명주기 메서드 경고`: 레거시 생명주기 메서드(componentWillMount, componentWillReceiveProps, componentWillUpdate)를 사용하면 경고 메시지가 표시됩니다. 이러한 메서드는 더 이상 권장되지 않으며, 대신에 componentDidMount, componentDidUpdate, getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
-
-- `안전하지 않은 생명주기 메서드 경고`: 안전하지 않은 생명주기 메서드(UNSAFE_componentWillMount, UNSAFE_componentWillReceiveProps, UNSAFE_componentWillUpdate)를 사용하면 경고 메시지가 표시됩니다. 이러한 메서드는 향후 `React` 업데이트에서 삭제될 예정이며, 대신에 getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
-
-StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재적인 문제를 조기에 감지할 수 있으므로,
-`React` 애플리케이션의 개발 및 유지보수를 보다 안전하게 수행할 수 있다.
+StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재적인 문제를 조기에 감지할 수 있으므로, `React` 애플리케이션의 개발 및 유지보수를 보다 안전하게 수행할 수 있다.
 
 ## VDOM(Virtual DOM)이란?
 
@@ -238,11 +229,9 @@ StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재�
 
 ### DOM이란?
 
-`DOM`(Document Object Model)은 웹 페이지의 구조화된 내용을 표현하는 객체 모델입니다.
-즉, HTML, XML 또는 XHTML 문서를 브라우저가 이해할 수 있는 객체 모델로 변환하여, 자바스크립트를 사용하여 문서의 구조, 스타일, 콘텐츠 등을 동적으로 조작할 수 있게 합니다.
+`DOM`(Document Object Model)은 웹 페이지의 구조화된 내용을 표현하는 객체 모델입니다. 즉, HTML, XML 또는 XHTML 문서를 브라우저가 이해할 수 있는 객체 모델로 변환하여, 자바스크립트를 사용하여 문서의 구조, 스타일, 콘텐츠 등을 동적으로 조작할 수 있게 합니다.
 
-`DOM`은 브라우저에서 웹 페이지의 HTML 문서를 로드하고 파싱한 결과물을 나타내는 객체 모델입니다.
-HTML 문서를 이루는 모든 요소들은 객체로 표현되며, 이러한 객체들은 서로 계층적인 관계를 가지고 있습니다. 이렇게 만들어진 객체 모델을 통해 개발자는 웹 페이지의 각 요소에 접근하고 조작할 수 있습니다.
+`DOM`은 브라우저에서 웹 페이지의 HTML 문서를 로드하고 파싱한 결과물을 나타내는 객체 모델입니다. HTML 문서를 이루는 모든 요소들은 객체로 표현되며, 이러한 객체들은 서로 계층적인 관계를 가지고 있습니다. 이렇게 만들어진 객체 모델을 통해 개발자는 웹 페이지의 각 요소에 접근하고 조작할 수 있습니다.
 
 ### DOM과 Virtual DOM의 차이
 
@@ -320,16 +309,15 @@ Reconciliation의 이점은 성능과 사용자 경험 개선입니다. React는
 ```
 
 {% hint style="info" %}
- 참고: unshift()와 달리, 전개 구문을 사용시에는 새로운 arr1을 만들며 기존 배열을 변형하지 않습니다.
+참고: unshift()와 달리, 전개 구문을 사용시에는 새로운 arr1을 만들며 기존 배열을 변형하지 않습니다.
 {% endhint %}
 
-전개 구문이 추가되고 나서 데이터의 불변성을 유지하기 더 용이해진 것 같다고 생각이 들었다.
-추가로 전개 구문이 어디에서 파생되어져 왔는지 알 수 있는 시간이었다.
+전개 구문이 추가되고 나서 데이터의 불변성을 유지하기 더 용이해진 것 같다고 생각이 들었다. 추가로 전개 구문이 어디에서 파생되어져 왔는지 알 수 있는 시간이었다.
 
 이번에 데브노트 키워드를 검색해보면서 느낀 부분은 `React`가 어떤 문제점을 해결하기 위해서 `JSX`를 도입하고 `VDOM`을 도입하게 되었는지 생각해보는 계기가 되었던 것 같다. 현재 실무에서 작업하면서도 이 기술이 왜 나오게 되었는지에 대해서 깊게 고민 해본적이 없고 대략적인 부분에 대해서만 알고 있었다면 이번에 `React`에 대한 전반적인 내용을 찾아보고 정리하면서 `React`와 전보다 더 가까워진 느낌이 들었다. 이번에 정리한 노트를 기반으로 지속적으로 머릿속에 집어 넣는 과정을 통해서 기본을 잘 기억하도록 해야겠다.
 
 #### Reference
 
-- [JSX 이해하기](https://ko.reactjs.org/docs/jsx-in-depth.html)
-- [Destructuring](https://ko.javascript.info/destructuring-assignment)
-- [Spread](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+* [JSX 이해하기](https://ko.reactjs.org/docs/jsx-in-depth.html)
+* [Destructuring](https://ko.javascript.info/destructuring-assignment)
+* [Spread](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread\_syntax)
