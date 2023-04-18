@@ -2,6 +2,82 @@
 
 `JSX(JavaScript XML)는 Javascript에 XML을 추가한 확장한 문법이다.`
 
+## JSX 없이 React 만들기
+
+`main.ts`
+
+```typescript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import App from './App';
+
+function main() {
+  const container = document.getElementById('root');
+  if (!container) {
+    return;
+  }
+
+  const root = ReactDOM.createRoot(container);
+  root.render(React.createElement(App, null));
+}
+
+main();
+```
+
+`App.ts`
+
+```typescript
+import React, { useState } from 'react';
+
+import Greeting from './components/Greeting';
+
+type ImageProps = {
+  src: string;
+  alt?: string;
+  width?: number;
+}
+
+function Image({ src, alt = '', width }: ImageProps) {
+  return (
+    React.createElement('img', { src, alt, width: width ?? 'auto' })
+  );
+}
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = (value: number) => {
+    setCount(count + value);
+  };
+
+  return (
+    React.createElement(
+      'div',
+      null,
+      React.createElement(Greeting, { name: 'wholeman!' }),
+      React.createElement(Image, { src: '/images/test.jpg', alt: 'Test Image', width: 200 }),
+      React.createElement('p', null, 'Count: ', count),
+      [1, 2, 3, 4, 5].map((i) => React.createElement('button', { type: 'button', key: i, onClick: () => handleClick(i) }, '+', i)),
+    )
+  );
+}
+```
+
+`components/Greeting.ts`
+
+```typescript
+import React from 'react';
+
+export default function Greeting({ name }: {
+  name: string;
+}) {
+  return (
+    React.createElement('p', null, 'Hello, ', name)
+  );
+}
+```
+
 ## React에서 JSX를 사용하는 목적
 
 근본적으로, `JSX`는 `React.createElement(component, props, ...children)` 함수에 대한 문법적 설탕을 제공할 뿐이다.
