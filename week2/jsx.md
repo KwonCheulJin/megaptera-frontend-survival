@@ -56,9 +56,17 @@ export default function App() {
       'div',
       null,
       React.createElement(Greeting, { name: 'wholeman!' }),
-      React.createElement(Image, { src: '/images/test.jpg', alt: 'Test Image', width: 200 }),
+      React.createElement(Image,
+      {
+        src: '/images/test.jpg',
+        alt: 'Test Image',
+        width: 200
+      }),
       React.createElement('p', null, 'Count: ', count),
-      [1, 2, 3, 4, 5].map((i) => React.createElement('button', { type: 'button', key: i, onClick: () => handleClick(i) }, '+', i)),
+      [1, 2, 3, 4, 5].map((i) => React.createElement('button',
+      { type: 'button', key: i, onClick: () => handleClick(i) },
+      '+',
+      i)),
     )
   );
 }
