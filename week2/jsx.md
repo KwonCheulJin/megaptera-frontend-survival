@@ -4,7 +4,7 @@
 
 ## React에서 JSX를 사용하는 목적
 
-근본적으로, `JSX`는 `React.createElement(component, props, ...children)` 함수에 대한 문법적 설탕을 제공할 뿐입니다.
+근본적으로, `JSX`는 `React.createElement(component, props, ...children)` 함수에 대한 문법적 설탕을 제공할 뿐이다.
 
 ```javascript
 const element = (
@@ -18,12 +18,12 @@ const element = React.createElement(
   {className: 'greeting'},
   'Hello, world!'
 );
-
-두 예시는 동일한 결과값을 나타내줍니다.
-
 ```
 
-하지만 `React.createElement`로 작성하였을 때 보다 `JSX`를 사용하는 것이 훨씬 직관적이고 가독성이 좋고 `JSX`는 하나의 파일에 자바스크립트와 HTML을 동시에 작성하여 편리하다.
+두 예시는 동일한 결과값을 나타내준다.
+
+하지만 `React.createElement`로 작성하였을 때 보다 `JSX`를 사용하는 것이 훨씬 직관적이고 가독성이 좋고
+`JSX`는 하나의 파일에 자바스크립트와 HTML을 동시에 작성 할 수 있는 점이 장점이다.
 
 ## Syntactic sugar
 
@@ -52,7 +52,6 @@ const element = React.createElement(
   )));
 
   삼항 연산자를 사용하게 되면 사용 전보다 훨씬 간결하게 작성이 가능하다.
-
 ```
 
 #### 2. Object Spread / Array Spread (객체 전개 / 배열 전개)
@@ -151,6 +150,71 @@ const element = React.createElement(
   함수의 매개변수를 전달 할때도 사용이 가능하다.
 ```
 
+#### 5. Nullish coalescing (null 병합 연산자)
+
+```javascript
+기존 문법
+const name = user.name || 'Guest';
+
+null 병합 연산자 문법
+const name = user.name ?? 'Guest';
+```
+
+기존 문법의 경우 존재하지 않거나 null, undefined, 0 또는 빈 문자열과 같은 잘못된 값이 있는 경우 기본값 'Guest'가 name 변수에 할당된다.
+
+그러나 이러한 기존 문법의 접근 방식은 name 속성이 존재하지만 잘못된 값을 가지고 있어도 기본값을 할당한다는 단점이 있다.
+
+null 병합 연산자(??)는 특별히 null 또는 undefined 값만 확인하는 기존 구문의 대안이다.
+값이 null 또는 undefined인 경우에만 기본값을 할당하고 값이 falsy인 경우에는 할당하지 않는다.
+
+#### 5. Arrow function (화살표 함수)
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+const add = (a, b) => a + b;
+```
+
+화살표 함수는 function 키워드를 사용하는 대신 화살표(=>)를 사용하여 함수를 간결하게 정의할 수 있다.
+
+#### 6. Template literals(템플릿 리터럴)
+
+```javascript
+const name = 'John';
+console.log('Hello, ' + name + '!');
+
+const name = 'John';
+console.log(`Hello, ${name}!`);
+```
+
+템플릿 리터럴을 사용하면 작은따옴표나 큰따옴표 대신 백틱(`)을 사용하여 문자열을 정의할 수 있다.
+이렇게 하면 문자열 안에 변수와 표현식을 더 쉽게 포함할 수 있다.
+
+#### 7. Optional chaining(선택적 연결)
+
+```javascript
+// 기존 문법
+const person = { name: 'John', address: { city: 'New York' } };
+const city = person.address && person.address.city;
+
+// Optional chaining 문법
+const person = { name: 'John', address: { city: 'New York' } };
+const city = person.address?.city;
+```
+
+`Optional chaining`을 사용하면 객체의 존재 여부에 대한 걱정 없이 객체의 속성에 액세스할 수 있습니다. 속성이 정의되지 않은 경우 오류를 발생시키는 대신 결과가 정의되지 않습니다
+
+위의 내용 말고 `배열 매소드`도 대표적인 문법적인 설탕에 포함된다.
+
+```javascript
+const arr = [1, 2, 3, 4, 5];
+const doubled = arr.map(x => x * 2);
+const evens = arr.filter(x => x % 2 === 0);
+const sum = arr.reduce((acc, x) => acc + x, 0);
+```
+
 ## React.createElement
 
 `React.createElement`는 `React`에서 가장 기본적인 컴포넌트 생성 방법 중 하나입니다. 이 함수를 사용하여 React 요소를 생성하고 이를 렌더링할 수 있다.
@@ -202,9 +266,9 @@ interface ReactElement<P = any, T extends string | JSXElementConstructor<any> = 
 * key: 컴포넌트가 업데이트될 때 React가 요소를 식별하는 데 사용되는 고유한 식별자입니다.
 * ref: React 요소에 대한 참조(reference)를 만드는 데 사용됩니다.
 
-`React`에서 렌더링되는 가장 작은 단위이다. `React Element`는 `JavaScript` 객체로, `React` 요소를 나타낸다. `React` 요소는 화면에 렌더링되는 요소를 나타내며, 다른 `React` 요소들과 결합하여 `React` 컴포넌트를 만드는 데 사용된다.
+`React Element`는 `React`에서 렌더링되는 가장 작은 단위이고, `JavaScript` 객체로, `React` 요소를 나타낸다. `React` 요소는 화면에 렌더링되는 요소를 나타내며, 다른 `React` 요소들과 결합하여 `React` 컴포넌트를 만드는 데 사용된다.
 
-`React Element`는 불변객체(immutable object)이며, 한 번 생성되면 수정될 수 없습니다. 이러한 불변성은 `React`의 성능을 향상시키는 데 기여합니다. `React`는 변화가 필요한 경우 새로운 `React Element`를 만들고 기존의 `Element`와 새 `Element`를 비교하여 최소한의 변경만 적용하므로 렌더링 성능을 향상시킵니다.
+`React Element`는 불변객체(immutable object)이며, 한 번 생성되면 수정될 수 없다. 이러한 불변성은 `React`의 성능을 향상시키는 데 기여하는데 `React`는 변화가 필요한 경우 새로운 `React Element`를 만들고 기존의 `Element`와 새 `Element`를 비교하여 최소한의 변경만 적용하므로 렌더링 성능을 향상시킨다.
 
 ## React StrictMode
 
@@ -223,29 +287,27 @@ StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재�
 
 `Virtual DOM`(가상 DOM)은 `React`의 핵심 개념 중 하나입니다. `Virtual DOM`은 브라우저가 직접 조작하는 실제 `DOM`과는 별도로, JavaScript 객체로 이루어진 객체 모델이다.
 
-`React`에서 컴포넌트가 업데이트될 때, 실제 `DOM`을 조작하는 것이 아니라, `Virtual DOM`을 업데이트하고, 이전과 새로운 `Virtual DOM`을 비교하여 변경된 부분만 실제 `DOM`에 적용합니다. 이를 통해 `DOM` 조작 횟수를 최소화하고, 빠른 렌더링을 구현할 수 있습니다.
+`React`에서 컴포넌트가 업데이트될 때, 실제 `DOM`을 조작하는 것이 아니라, `Virtual DOM`을 업데이트하고, 이전과 새로운 `Virtual DOM`을 비교하여 변경된 부분만 실제 `DOM`에 적용합니다. 이를 통해 `DOM` 조작 횟수를 최소화하고, 빠른 렌더링을 구현할 수 있다.
 
-`React`에서는 이러한 `Virtual DOM`을 구현하고, 각 컴포넌트의 상태와 속성이 변경될 때마다 `Virtual DOM`을 업데이트하고, 변경된 부분만 최적화된 방식으로 실제 `DOM`에 적용하여 UI를 업데이트합니다. 이를 통해 `React`는 빠르고 안정적인 UI 개발을 가능케 합니다.
+`React`에서는 이러한 `Virtual DOM`을 구현하고, 각 컴포넌트의 상태와 속성이 변경될 때마다 `Virtual DOM`을 업데이트하고, 변경된 부분만 최적화된 방식으로 실제 `DOM`에 적용하여 UI를 업데이트한다.
 
 ### DOM이란?
 
-`DOM`(Document Object Model)은 웹 페이지의 구조화된 내용을 표현하는 객체 모델입니다. 즉, HTML, XML 또는 XHTML 문서를 브라우저가 이해할 수 있는 객체 모델로 변환하여, 자바스크립트를 사용하여 문서의 구조, 스타일, 콘텐츠 등을 동적으로 조작할 수 있게 합니다.
-
-`DOM`은 브라우저에서 웹 페이지의 HTML 문서를 로드하고 파싱한 결과물을 나타내는 객체 모델입니다. HTML 문서를 이루는 모든 요소들은 객체로 표현되며, 이러한 객체들은 서로 계층적인 관계를 가지고 있습니다. 이렇게 만들어진 객체 모델을 통해 개발자는 웹 페이지의 각 요소에 접근하고 조작할 수 있습니다.
+`DOM`(Document Object Model)은 브라우저에서 웹 페이지의 HTML 문서를 로드하고 파싱한 결과물을 나타내는 객체 모델이다. 즉, HTML, XML 또는 XHTML 문서를 브라우저가 이해할 수 있는 객체 모델로 변환하여(HTML 문서를 이루는 모든 요소들은 객체로 표현되며, 이러한 객체들은 서로 계층적인 관계를 가지고 있다.), 자바스크립트를 사용하여 문서의 구조, 스타일, 콘텐츠 등을 동적으로 조작할 수 있게 한다.
 
 ### DOM과 Virtual DOM의 차이
 
-`DOM`은 실제로 브라우저에서 웹 페이지를 렌더링하는 데 사용되는 객체 모델입니다. 브라우저가 HTML, CSS, JavaScript를 로드하고 해석한 결과물을 나타내는 객체 모델이며, 이를 통해 개발자가 자바스크립트를 사용하여 웹 페이지의 동적인 요소를 조작할 수 있습니다. `DOM`은 브라우저에서 직접 조작되는 실제 객체이므로, `DOM` 조작 작업은 브라우저의 성능을 크게 저하시킬 수 있습니다.
+`DOM`은 브라우저에서 직접 조작되는 실제 객체이므로, `DOM` 조작 작업은 브라우저의 성능을 크게 저하시킬 수 있습니다.
 
-반면, `Virtual DOM`은 JavaScript 객체로 이루어진 객체 모델로서, `React`에서 UI 렌더링에 사용됩니다. `React`는 `Virtual DOM`을 사용하여, 컴포넌트의 상태와 속성이 변경될 때마다 `Virtual DOM`을 업데이트하고, 변경된 부분만 최적화된 방식으로 실제 DOM에 적용하여 UI를 업데이트합니다. `Virtual DOM`은 `React`에서 내부적으로 관리되는 것으로, 브라우저가 직접 조작하지 않으므로 DOM 조작 작업의 비용을 크게 절감할 수 있습니다.
+반면, `Virtual DOM`은 `React`에서 내부적으로 관리되는 것으로, 브라우저가 직접 조작하지 않으므로 DOM 조작 작업의 비용을 크게 절감할 수 있다.
 
 ### Reconciliation(재조정) 과정은 무엇인가?
 
-React에서 Reconciliation(재조정)은 `Virtual DOM`에서 이루어지는 과정으로, 이전 상태와 현재 상태의 `Virtual DOM`을 비교하여 변경된 부분만 실제 DOM에 업데이트하는 과정입니다.
+`React`에서 `Reconciliation(재조정)`은 `Virtual DOM`에서 이루어지는 과정으로, 이전 상태와 현재 상태의 `Virtual DOM`을 비교하여 변경된 부분만 실제 `DOM`에 업데이트하는 과정이다.
 
-Reconciliation은 `Virtual DOM`의 노드를 순회하며 이전 상태와 비교하여 변경된 부분을 찾습니다. 이 과정에서 React는 효율적으로 비교를 수행하기 위해 다양한 최적화 기술을 사용합니다. 예를 들어, 같은 컴포넌트가 여러 번 렌더링될 때, React는 이전 렌더링 결과와 현재 렌더링 결과를 비교하여 변경된 부분만 업데이트합니다.
+`Reconciliation`은 `Virtual DOM`의 노드를 순회하며 이전 상태와 비교하여 변경된 부분을 찾는다. 이 과정에서 `React`는 효율적으로 비교를 수행하기 위해 다양한 최적화 기술을 사용한다. 예를 들어, 같은 컴포넌트가 여러 번 렌더링될 때, `React`는 이전 렌더링 결과와 현재 렌더링 결과를 비교하여 변경된 부분만 업데이트한다.
 
-Reconciliation의 이점은 성능과 사용자 경험 개선입니다. React는 `Virtual DOM`을 사용하여 변경된 부분만 렌더링하므로, 필요한 최소한의 DOM 조작만 수행되어 성능이 향상됩니다. 또한, 변경된 부분만 업데이트되므로, 불필요한 화면 깜빡임을 방지하고 사용자 경험을 개선할 수 있습니다.
+`Reconciliation`의 이점은 성능과 사용자 경험 개선이다. `React`는 `Virtual DOM`을 사용하여 변경된 부분만 렌더링하므로, 필요한 최소한의 `DOM` 조작만 수행되어 성능이 향상되고, 변경된 부분만 업데이트되므로, 불필요한 화면 깜빡임을 방지하고 사용자 경험을 개선할 수 있다.
 
 #### Aha Moment
 
@@ -312,9 +374,14 @@ Reconciliation의 이점은 성능과 사용자 경험 개선입니다. React는
 참고: unshift()와 달리, 전개 구문을 사용시에는 새로운 arr1을 만들며 기존 배열을 변형하지 않습니다.
 {% endhint %}
 
-전개 구문이 추가되고 나서 데이터의 불변성을 유지하기 더 용이해진 것 같다고 생각이 들었다. 추가로 전개 구문이 어디에서 파생되어져 왔는지 알 수 있는 시간이었다.
+전개 구문이 추가되고 나서 데이터의 불변성을 유지하기 더 용이해진 것 같다고 생각이 들었다.
+추가로 전개 구문이 어디에서 파생되어져 왔는지 알 수 있는 시간이었다.
 
-이번에 데브노트 키워드를 검색해보면서 느낀 부분은 `React`가 어떤 문제점을 해결하기 위해서 `JSX`를 도입하고 `VDOM`을 도입하게 되었는지 생각해보는 계기가 되었던 것 같다. 현재 실무에서 작업하면서도 이 기술이 왜 나오게 되었는지에 대해서 깊게 고민 해본적이 없고 대략적인 부분에 대해서만 알고 있었다면 이번에 `React`에 대한 전반적인 내용을 찾아보고 정리하면서 `React`와 전보다 더 가까워진 느낌이 들었다. 이번에 정리한 노트를 기반으로 지속적으로 머릿속에 집어 넣는 과정을 통해서 기본을 잘 기억하도록 해야겠다.
+이번에 데브노트 키워드를 검색해보면서 느낀 부분은 `React`가 어떤 문제점을 해결하기 위해서 `JSX`를 도입하고
+`VDOM`을 도입하게 되었는지 생각해보는 계기가 되었던 것 같다.
+현재 실무에서 작업하면서도 이 기술이 왜 나오게 되었는지에 대해서 깊게 고민 해본적이 없고 대략적인 부분에
+대해서만 알고 있었다면 이번에 `React`에 대한 전반적인 내용을 찾아보고 정리하면서 `React`와 전보다 더 가까워진 느낌이 들었다.
+이번에 정리한 노트를 기반으로 지속적으로 머릿속에 집어 넣는 과정을 통해서 기본을 잘 기억하도록 해야겠다.
 
 #### Reference
 
