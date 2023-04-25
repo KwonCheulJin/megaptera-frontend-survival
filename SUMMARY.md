@@ -16,3 +16,7 @@
 
 * [2주차](week2/README.md)
   * [1.JSX](week2/jsx.md)
+
+* [3주차](week3/README.md)
+  * [1.React Component](week2/react-component.md)
+  * [2.React State](week2/react-state.md)
