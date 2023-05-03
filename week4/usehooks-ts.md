@@ -67,7 +67,7 @@ for example. Be careful though, the latter does not trigger a re-rendering in ca
 
 ## [SWR](https://swr.vercel.app/ko)
 
-SWR은 데이터 가져오기, 캐싱 및 재검증을 위한 React 후크 라이브러리다.
+SWR은 데이터 가져오기, 캐싱 및 재검증을 위한 React hook 라이브러리다.
 이름은 HTTP RFC 5861에 의해 알려진 HTTP 캐시 무효 전략인 "stale-while-revalidate"에서 유래되었다.
 SWR을 사용하면 API, 데이터베이스 또는 기타 소스에서 데이터를 가져온 다음 React 구성 요소의 데이터를 실시간으로 자동 업데이트할 수 있다.
 
@@ -101,7 +101,7 @@ function Profile() {
 
 React Query는 애플리케이션에서 서버 상태를 관리, 캐싱 및 업데이트하기 위한 React 라이브러리다.
 API 및 기타 소스에서 데이터를 가져오고, 캐싱하고, 업데이트하는 프로세스를 간소화한다.
-React Query는 선언적이고 효율적인 방식으로 비동기 데이터 가져오기 및 상태 관리를 처리할 수 있는 일련의 후크를 제공한다.
+React Query는 선언적이고 효율적인 방식으로 비동기 데이터 가져오기 및 상태 관리를 처리할 수 있는 일련의 hook을 제공한다.
 
 React Query는 자동 캐싱, 백그라운드 다시 가져오기, 스마트 데이터 동기화와 같은 기능을 도입하여 데이터 가져오기를 보다 효율적으로 처리하는 방법을 제공하는 것을 목표로 한다.
 또한 네트워크 오류를 처리하고 데이터 가져오기가 항상 성공하도록 하는 데 사용할 수 있는 재시도 메커니즘이 내장되어 있다.
