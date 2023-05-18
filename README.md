@@ -22,6 +22,6 @@
 [week4](week4/)
 {% endcontent-ref %}
 
-{% content-ref url="week5/" %}
-[week5](week5/)
+{% content-ref url="week6/" %}
+[week6](week6/)
 {% endcontent-ref %}
