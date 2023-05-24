@@ -25,3 +25,7 @@
 {% content-ref url="week6/" %}
 [week6](week6/)
 {% endcontent-ref %}
+
+{% content-ref url="week7/" %}
+[week7](week7/)
+{% endcontent-ref %}
