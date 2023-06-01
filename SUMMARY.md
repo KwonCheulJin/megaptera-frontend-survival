@@ -51,5 +51,5 @@
   * [2.Style Basics](week8/style-basics.md)
   * [3.CSS in JS](week8/css-in-js.md)
   * [4.styled-components](week8/styled-components.md)
-  * [4.props와 attrs](week8/props-attrs.md)
-  * [4.Global Style & Theme](week8/global-style-and-theme.md)
+  * [5.props와 attrs](week8/props-attrs.md)
+  * [6.Global Style & Theme](week8/global-style-and-theme.md)
