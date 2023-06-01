@@ -1,4 +1,4 @@
-# 6주차
+# 7주차
 
 {% content-ref url="routing.md" %}
 [routing.md](routing.md)

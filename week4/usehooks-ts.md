@@ -10,60 +10,60 @@
 ### [useEffectOnce](https://usehooks-ts.com/react-hook/use-effect-once)
 
 - Just modified version of useEffect that's executed only one time, at the mounting time.
-(마운팅 시점에 한 번만 실행되는 사용 효과의 수정된 버전입니다.)
+(마운팅 시점에 한 번만 실행되는 사용 효과의 수정된 버전이다.)
 
 ### [useFetch](https://usehooks-ts.com/react-hook/use-fetch)
 
 - Here is a React Hook which aims to retrieve data on an API using the native Fetch API.
-  (다음은 네이티브 Fetch API를 사용하여 API에서 데이터를 검색하는 것을 목표로 하는 React Hook입니다.)
+  (다음은 네이티브 Fetch API를 사용하여 API에서 데이터를 검색하는 것을 목표로 하는 React Hook이다.)
 - I used a reducer to separate state logic and simplify testing via functional style.
-  (상태 로직을 분리하고 함수형 스타일을 통해 테스트를 단순화하기 위해 리듀서를 사용했습니다.)
+  (상태 로직을 분리하고 함수형 스타일을 통해 테스트를 단순화하기 위해 리듀서를 사용했다.)
 - The received data is saved (cached) in the application via useRef, but you can use LocalStorage (see useLocalStorage()) or a caching solution to persist the data.
-  (수신된 데이터는 useRef를 통해 애플리케이션에 저장(캐시)되지만, 데이터를 지속시키기 위해 LocalStorage(useLocalStorage() 참조) 또는 캐싱 솔루션을 사용할 수 있습니다.)
+  (수신된 데이터는 useRef를 통해 애플리케이션에 저장(캐시)되지만, 데이터를 지속시키기 위해 LocalStorage(useLocalStorage() 참조) 또는 캐싱 솔루션을 사용할 수 있다.)
 - The fetch is executed when the component is mounted and if the url changes.
 If ever the url is undefined, or if the component is unmounted before the data is recovered, the fetch will not be called.
-  (컴포넌트가 마운트되고 URL이 변경되면 가져오기가 실행됩니다. URL이 정의되지 않았거나 데이터가 복구되기 전에 컴포넌트가 마운트 해제되면 가져오기가 호출되지 않습니다.)
+  (컴포넌트가 마운트되고 URL이 변경되면 가져오기가 실행된다. URL이 정의되지 않았거나 데이터가 복구되기 전에 컴포넌트가 마운트 해제되면 가져오기가 호출되지 않다.)
 - This hook also takes the request config as a second parameter in order to be able to pass the authorization token in the header of the request,
 for example. Be careful though, the latter does not trigger a re-rendering in case of modification, go through the url params to dynamically change the request.
-(이 훅은 또한 요청의 헤더에 인증 토큰을 전달할 수 있도록 요청 구성을 두 번째 매개변수로 사용합니다(예: 요청 헤더에 인증 토큰 전달). 하지만 후자는 요청을 동적으로 변경하기 위해 URL 매개변수를 통해 요청을 수정하는 경우 재렌더링을 트리거하지 않으므로 주의하세요.)
+(이 훅은 또한 요청의 헤더에 인증 토큰을 전달할 수 있도록 요청 구성을 두 번째 매개변수로 사용한다(예: 요청 헤더에 인증 토큰 전달). 하지만 후자는 요청을 동적으로 변경하기 위해 URL 매개변수를 통해 요청을 수정하는 경우 재렌더링을 트리거하지 않으므로 주의하세요.)
 
 ### [useInterval](https://usehooks-ts.com/react-hook/use-interval)
 
 - Use setInterval in functional React component with the same API.
   (동일한 API를 가진 함수형 React 컴포넌트에서 setInterval 사용.)
 - Set your callback function as a first parameter and a delay (in milliseconds) for the second argument.
-  (콜백 함수를 첫 번째 매개변수로 설정하고 두 번째 인수의 지연 시간(밀리초)을 설정합니다.)
+  (콜백 함수를 첫 번째 매개변수로 설정하고 두 번째 인수의 지연 시간(밀리초)을 설정한다.)
 - You can also stop the timer passing null instead the delay or even, execute it right away passing 0.
-  (지연 대신 0을 전달하는 타이머를 중지하거나 0을 전달하는 타이머를 바로 실행할 수도 있습니다.)
+  (지연 대신 0을 전달하는 타이머를 중지하거나 0을 전달하는 타이머를 바로 실행할 수도 있다.)
 - The main difference between the setInterval you know and this useInterval hook is that its arguments are "dynamic".
-  (여러분이 알고 있는 setInterval과 이 useInterval 훅의 주요 차이점은 그 인수가 "동적"이라는 것입니다.)
+  (여러분이 알고 있는 setInterval과 이 useInterval 훅의 주요 차이점은 그 인수가 "동적"이라는 것이다.)
 - You can get more information in the Dan Abramov's [blog post](https://overreacted.io/making-setinterval-declarative-with-react-hooks/).
-  (댄 아브라모프의 블로그 게시물에서 자세한 정보를 확인할 수 있습니다.)
+  (댄 아브라모프의 블로그 게시물에서 자세한 정보를 확인할 수 있다.)
 
 ### [useEventListener](https://usehooks-ts.com/react-hook/use-event-listener)
 
 - Use EventListener with simplicity by React Hook.
   (이벤트 리스너를 React Hook으로 간단하게 사용하세요.)
 - Supports Window, Element and Document and custom events with almost the same parameters as the native [addEventListener options](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#syntax).
-  (기본 추가 이벤트 리스너 옵션과 거의 동일한 매개변수로 창, 요소, 문서 및 사용자 지정 이벤트를 지원합니다.)
+  (기본 추가 이벤트 리스너 옵션과 거의 동일한 매개변수로 창, 요소, 문서 및 사용자 지정 이벤트를 지원한다.)
 
 ### [useLocalStorage](https://usehooks-ts.com/react-hook/use-local-storage)
 
 - Persist the state with local storage so that it remains after a page refresh.
-  (페이지 새로 고침 후에도 상태가 유지되도록 로컬 저장소로 상태를 유지합니다.)
+  (페이지 새로 고침 후에도 상태가 유지되도록 로컬 저장소로 상태를 유지한다.)
 - This can be useful for a dark theme. This hook is used in the same way as useState except that you must pass the storage key in the 1st parameter.
-  (어두운 테마에 유용할 수 있습니다. 이 훅은 첫 번째 매개변수에 저장소 키를 전달해야 한다는 점을 제외하면 useState와 동일한 방식으로 사용됩니다.)
+  (어두운 테마에 유용할 수 있다. 이 훅은 첫 번째 매개변수에 저장소 키를 전달해야 한다는 점을 제외하면 useState와 동일한 방식으로 사용된다.)
 - If the window object is not present (as in SSR), useLocalStorage() will return the default value.
-  (window 객체가 없는 경우(SSR에서와 같이) useLocalStorage()는 기본값을 반환합니다.)
+  (window 객체가 없는 경우(SSR에서와 같이) useLocalStorage()는 기본값을 반환한다.)
 
 ### [useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode)
 
 - This React Hook offers you an interface to enable, disable, toggle and read the dark theme mode.
-  (이 React Hook은 어두운 테마 모드를 활성화, 비활성화, 토글 및 읽을 수 있는 인터페이스를 제공합니다.)
+  (이 React Hook은 어두운 테마 모드를 활성화, 비활성화, 토글 및 읽을 수 있는 인터페이스를 제공한다.)
 - The returned value (isDarkMode) is a boolean to let you be able to use with your logic.
-  (반환되는 값(isDarkMode)은 로직에 사용할 수 있도록 부울입니다.)
+  (반환되는 값(isDarkMode)은 로직에 사용할 수 있도록 부울이다.)
 - It uses internally useLocalStorage() to persist the value and listens the OS color scheme preferences.
-  (내부적으로 useLocalStorage()를 사용하여 값을 유지하고 OS 색 구성표 기본 설정을 수신합니다.)
+  (내부적으로 useLocalStorage()를 사용하여 값을 유지하고 OS 색 구성표 기본 설정을 수신한다.)
 
 ## [SWR](https://swr.vercel.app/ko)
 

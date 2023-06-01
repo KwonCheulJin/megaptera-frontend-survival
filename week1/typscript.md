@@ -13,7 +13,7 @@ npx ts-node
 
 Interface와 Type Alias 다소 비슷해보이는 것은 사실이나
 사용자 정의 타입이 할 수 없는 것을 인터페이스는 할 수 있다.
-할 수 있는 것 중 하나는 인터페이스는 `선언을 병합`할 수 있다는 점입니다.
+할 수 있는 것 중 하나는 인터페이스는 `선언을 병합`할 수 있다는 점이다.
 
 아래의 타입들은 내가 현재 실무에서 사용하고 있는 프로모션 타입들 중 일부분을 가져왔다.
 
@@ -91,7 +91,7 @@ type ButtonType = {
 }
 
 // [오류]
-// 'ButtonType' 식별자가 중복되었습니다.
+// 'ButtonType' 식별자가 중복되었다.
 type ButtonType = {
   onToggle():void;
 }
@@ -115,21 +115,21 @@ let y = 'hello';
 ### 타입 단언
 
 ```javascript
-let assertion:any = "타입 어설션은 '타입을 단언'합니다.";
+let assertion:any = "타입 어설션은 '타입을 단언'한다.";
 
 // 방법 1: assertion 변수의 타입을 string으로 단언 처리
 let assertion_count:number = (<string>assertion).length;
 ```
 
 ```javascript
-let assertion:any = "타입 어설션은 '타입을 단언'합니다.";
+let assertion:any = "타입 어설션은 '타입을 단언'한다.";
 
 // 방법 2: assertion 변수의 타입을 string으로 단언 처리
 let assertion_count:number = (assertion as string).length;
 ```
 
 {% hint style="info" %}
- 두 방법 모두 결과는 동일합니다. 하지만 JSX와 함께 사용하는 경우에는 as 문법만 허용됩니다.
+ 두 방법 모두 결과는 동일하다. 하지만 JSX와 함께 사용하는 경우에는 as 문법만 허용된다.
 {% endhint %}
 
 보통 JSX에서 많이 쓰는 타입 단언에는 div태그에서 이벤트가 발생한 상태에서 해당 div안의 input에서
@@ -185,7 +185,7 @@ type Capt = Person & Developer;
 ## Optional Parameter
 
 JavaScript에서는 존재하지 않는 프로퍼티에 접근하였을 때, 런타임 오류가 발생하지 않고
-undefined 값을 얻게 됩니다.
+undefined 값을 얻게 된다.
 
 ```typescript
 export type PromotionCandidateList = User & {

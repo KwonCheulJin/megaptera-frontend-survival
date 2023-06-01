@@ -16,12 +16,12 @@
 
 > The more your tests resemble the way your software is used,
 > the more confidence they can give you. - RTL 공식문서
-> 테스트가 소프트웨어 사용 방식과 유사할수록 더 많은 신뢰를 얻을 수 있습니다.
+> 테스트가 소프트웨어 사용 방식과 유사할수록 더 많은 신뢰를 얻을 수 있다.
 
 React Testing Library는 UI에 특화된 라이브러리이다.
 
 > RTL은 이름 그대로 React 컴포넌트를 테스트 하기 위해 만들어진 도구이기 때문에,
-> 기본적으로 CRA에 내장되어 있습니다. 만약 CRA를 사용하지 않고 개발 환경을 직접 설정한다면
+> 기본적으로 CRA에 내장되어 있다. 만약 CRA를 사용하지 않고 개발 환경을 직접 설정한다면
 > `npm install --save-dev @testing-library/react` 명령어를 이용해 설치하면 된다.
 
 ```typescript

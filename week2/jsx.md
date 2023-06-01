@@ -190,7 +190,7 @@ const element = React.createElement(
 
   // 구조 분해 할당을 이용해
   // firstName엔 arr[0]을
-  // surname엔 arr[1]을 할당하였습니다.
+  // surname엔 arr[1]을 할당하였다.
   let [firstName, surname] = arr;
 
   배열도 마찬가지로 구조 분해하여 변수로 할당하여 사용 할 수 있다.
@@ -214,7 +214,7 @@ const element = React.createElement(
 
   console.log(rest); // ['c', 'c', 'd', 'e'];
 
-  rest는 나머지 배열 요소들이 저장된 새로운 배열이 됩니다.
+  rest는 나머지 배열 요소들이 저장된 새로운 배열이 된다.
   rest 대신에 다른 이름을 사용해도 되는데, 변수 앞의 점 세 개(...)와 변수가 가장 마지막에 위치해야 한다.
 
   function sum(...theArgs) {
@@ -288,7 +288,7 @@ const person = { name: 'John', address: { city: 'New York' } };
 const city = person.address?.city;
 ```
 
-`Optional chaining`을 사용하면 객체의 존재 여부에 대한 걱정 없이 객체의 속성에 액세스할 수 있습니다. 속성이 정의되지 않은 경우 오류를 발생시키는 대신 결과가 정의되지 않습니다
+`Optional chaining`을 사용하면 객체의 존재 여부에 대한 걱정 없이 객체의 속성에 액세스할 수 있다. 속성이 정의되지 않은 경우 오류를 발생시키는 대신 결과가 정의되지 않다
 
 위의 내용 말고 `배열 매소드`도 대표적인 문법적인 설탕에 포함된다.
 
@@ -301,7 +301,7 @@ const sum = arr.reduce((acc, x) => acc + x, 0);
 
 ## React.createElement
 
-`React.createElement`는 `React`에서 가장 기본적인 컴포넌트 생성 방법 중 하나입니다. 이 함수를 사용하여 React 요소를 생성하고 이를 렌더링할 수 있다.
+`React.createElement`는 `React`에서 가장 기본적인 컴포넌트 생성 방법 중 하나이다. 이 함수를 사용하여 React 요소를 생성하고 이를 렌더링할 수 있다.
 
 `React.createElement` 함수는 세 개의 인수가 필요하다.
 
@@ -319,7 +319,7 @@ React.createElement('div', { className: 'test' }, 'Hello, World!')
 <div className="test">Hello, World!</div>
 ```
 
-`React.createElement` 함수는 컴포넌트 함수를 첫 번째 인수로 사용할 수도 있다. 이 경우 함수 이름을 문자열로 전달하거나 ES6의 화살표 함수 구문을 사용하여 직접 함수를 전달할 수 있습니다. 또한 속성 및 자식 요소들은 컴포넌트 함수의 인수로 전달됩니다.
+`React.createElement` 함수는 컴포넌트 함수를 첫 번째 인수로 사용할 수도 있다. 이 경우 함수 이름을 문자열로 전달하거나 ES6의 화살표 함수 구문을 사용하여 직접 함수를 전달할 수 있다. 또한 속성 및 자식 요소들은 컴포넌트 함수의 인수로 전달된다.
 
 ```javascript
 function MyComponent(props) {
@@ -345,10 +345,10 @@ interface ReactElement<P = any, T extends string | JSXElementConstructor<any> = 
 
 `React Element`의 속성(property)
 
-* type: 요소의 유형, 예를 들어 "div" 또는 사용자 지정 컴포넌트 함수입니다.
-* props: 요소의 속성, 예를 들어 className, style, onClick 등의 속성이 포함됩니다.
-* key: 컴포넌트가 업데이트될 때 React가 요소를 식별하는 데 사용되는 고유한 식별자입니다.
-* ref: React 요소에 대한 참조(reference)를 만드는 데 사용됩니다.
+* type: 요소의 유형, 예를 들어 "div" 또는 사용자 지정 컴포넌트 함수이다.
+* props: 요소의 속성, 예를 들어 className, style, onClick 등의 속성이 포함된다.
+* key: 컴포넌트가 업데이트될 때 React가 요소를 식별하는 데 사용되는 고유한 식별자이다.
+* ref: React 요소에 대한 참조(reference)를 만드는 데 사용된다.
 
 `React Element`는 `React`에서 렌더링되는 가장 작은 단위이고, `JavaScript` 객체로, `React` 요소를 나타낸다. `React` 요소는 화면에 렌더링되는 요소를 나타내며, 다른 `React` 요소들과 결합하여 `React` 컴포넌트를 만드는 데 사용된다.
 
@@ -361,17 +361,17 @@ interface ReactElement<P = any, T extends string | JSXElementConstructor<any> = 
 `StrictMode를 통해서 얻을 수 있는 효과`
 
 * `부수효과 검사`: React 컴포넌트에서 부수효과(일반적으로 생명주기 메서드, useEffect 등)를 사용할 때 경고 메시지를 출력하여 잠재적인 문제를 감지할 수 있다.
-* `레거시 문자열 ref 경고`: 문자열을 사용하여 ref를 생성하면 경고 메시지가 표시됩니다. 문자열 ref는 더 이상 권장되지 않으며, 함수를 사용하여 ref를 생성하는 것이 좋다.
-* `레거시 생명주기 메서드 경고`: 레거시 생명주기 메서드(componentWillMount, componentWillReceiveProps, componentWillUpdate)를 사용하면 경고 메시지가 표시됩니다. 이러한 메서드는 더 이상 권장되지 않으며, 대신에 componentDidMount, componentDidUpdate, getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
-* `안전하지 않은 생명주기 메서드 경고`: 안전하지 않은 생명주기 메서드(UNSAFE\_componentWillMount, UNSAFE\_componentWillReceiveProps, UNSAFE\_componentWillUpdate)를 사용하면 경고 메시지가 표시됩니다. 이러한 메서드는 향후 `React` 업데이트에서 삭제될 예정이며, 대신에 getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
+* `레거시 문자열 ref 경고`: 문자열을 사용하여 ref를 생성하면 경고 메시지가 표시된다. 문자열 ref는 더 이상 권장되지 않으며, 함수를 사용하여 ref를 생성하는 것이 좋다.
+* `레거시 생명주기 메서드 경고`: 레거시 생명주기 메서드(componentWillMount, componentWillReceiveProps, componentWillUpdate)를 사용하면 경고 메시지가 표시된다. 이러한 메서드는 더 이상 권장되지 않으며, 대신에 componentDidMount, componentDidUpdate, getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
+* `안전하지 않은 생명주기 메서드 경고`: 안전하지 않은 생명주기 메서드(UNSAFE\_componentWillMount, UNSAFE\_componentWillReceiveProps, UNSAFE\_componentWillUpdate)를 사용하면 경고 메시지가 표시된다. 이러한 메서드는 향후 `React` 업데이트에서 삭제될 예정이며, 대신에 getDerivedStateFromProps 및 getSnapshotBeforeUpdate 메서드를 사용하는 것이 좋다.
 
 StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재적인 문제를 조기에 감지할 수 있으므로, `React` 애플리케이션의 개발 및 유지보수를 보다 안전하게 수행할 수 있다.
 
 ## VDOM(Virtual DOM)이란?
 
-`Virtual DOM`(가상 DOM)은 `React`의 핵심 개념 중 하나입니다. `Virtual DOM`은 브라우저가 직접 조작하는 실제 `DOM`과는 별도로, JavaScript 객체로 이루어진 객체 모델이다.
+`Virtual DOM`(가상 DOM)은 `React`의 핵심 개념 중 하나이다. `Virtual DOM`은 브라우저가 직접 조작하는 실제 `DOM`과는 별도로, JavaScript 객체로 이루어진 객체 모델이다.
 
-`React`에서 컴포넌트가 업데이트될 때, 실제 `DOM`을 조작하는 것이 아니라, `Virtual DOM`을 업데이트하고, 이전과 새로운 `Virtual DOM`을 비교하여 변경된 부분만 실제 `DOM`에 적용합니다. 이를 통해 `DOM` 조작 횟수를 최소화하고, 빠른 렌더링을 구현할 수 있다.
+`React`에서 컴포넌트가 업데이트될 때, 실제 `DOM`을 조작하는 것이 아니라, `Virtual DOM`을 업데이트하고, 이전과 새로운 `Virtual DOM`을 비교하여 변경된 부분만 실제 `DOM`에 적용한다. 이를 통해 `DOM` 조작 횟수를 최소화하고, 빠른 렌더링을 구현할 수 있다.
 
 `React`에서는 이러한 `Virtual DOM`을 구현하고, 각 컴포넌트의 상태와 속성이 변경될 때마다 `Virtual DOM`을 업데이트하고, 변경된 부분만 최적화된 방식으로 실제 `DOM`에 적용하여 UI를 업데이트한다.
 
@@ -381,7 +381,7 @@ StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재�
 
 ### DOM과 Virtual DOM의 차이
 
-`DOM`은 브라우저에서 직접 조작되는 실제 객체이므로, `DOM` 조작 작업은 브라우저의 성능을 크게 저하시킬 수 있습니다.
+`DOM`은 브라우저에서 직접 조작되는 실제 객체이므로, `DOM` 조작 작업은 브라우저의 성능을 크게 저하시킬 수 있다.
 
 반면, `Virtual DOM`은 `React`에서 내부적으로 관리되는 것으로, 브라우저가 직접 조작하지 않으므로 DOM 조작 작업의 비용을 크게 절감할 수 있다.
 
@@ -399,14 +399,14 @@ StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재�
 
 `apply()` 대체
 
-일반적으로 배열의 엘리먼트를 함수의 인수로 사용하고자 할 때 `Function.prototype.apply()` 를 사용하였습니다.
+일반적으로 배열의 엘리먼트를 함수의 인수로 사용하고자 할 때 `Function.prototype.apply()` 를 사용하였다.
 
 ```javascript
   function myFunction(x, y, z) { }
   let args = [0, 1, 2];
   myFunction.apply(null, args);
 
-  전개 구문을 사용해 위 코드는 다음과 같이 작성될 수 있습니다.
+  전개 구문을 사용해 위 코드는 다음과 같이 작성될 수 있다.
 
   function myFunction(x, y, z) { }
   let args = [0, 1, 2];
@@ -432,7 +432,7 @@ StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재�
   // arr2 의 모든 항목을 arr1 에 붙임
   arr1 = arr1.concat(arr2);
 
-  전개 구문을 사용하여 위와 동일하게 변경 할 수 있습니다.
+  전개 구문을 사용하여 위와 동일하게 변경 할 수 있다.
 
   let arr1 = [0, 1, 2];
   let arr2 = [3, 4, 5];
@@ -447,7 +447,7 @@ StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재�
   // arr2 의 모든 항목을 arr1 의 앞에 붙임
   Array.prototype.unshift.apply(arr1, arr2) // arr1 은 이제 [3, 4, 5, 0, 1, 2] 가 됨
 
-  전개 구문을 사용하여 위와 동일하게 변경 할 수 있습니다.
+  전개 구문을 사용하여 위와 동일하게 변경 할 수 있다.
 
   let arr1 = [0, 1, 2];
   let arr2 = [3, 4, 5];
@@ -455,7 +455,7 @@ StrictMode를 사용하면 애플리케이션에서 발생할 수 있는 잠재�
 ```
 
 {% hint style="info" %}
-참고: unshift()와 달리, 전개 구문을 사용시에는 새로운 arr1을 만들며 기존 배열을 변형하지 않습니다.
+참고: unshift()와 달리, 전개 구문을 사용시에는 새로운 arr1을 만들며 기존 배열을 변형하지 않다.
 {% endhint %}
 
 전개 구문이 추가되고 나서 데이터의 불변성을 유지하기 더 용이해진 것 같다고 생각이 들었다.
